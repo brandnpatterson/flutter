@@ -12,6 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 Install the following package managers to get started
 
 * [MAMP](https://www.mamp.info/en/) - (XAMPP possibly in the future)
+* [Sequal Pro](https://www.sequelpro.com/) - (or your choice)
 * [Composer](https://getcomposer.org/) - PHP package manager
 * [NPM](https://nodejs.org/en/) - Installed with Node.js
 * [Yarn](https://getcomposer.org/) (optional)
@@ -33,6 +34,10 @@ npm start (gulp clean && gulp)
 ```
 
 flutter will open in your default browser!
+
+### Move Database to the proper folder in MAMP
+
+Coming soon!..
 
 ### Autoloading with Composer
 
