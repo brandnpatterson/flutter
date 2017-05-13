@@ -4,7 +4,7 @@ flutter is a lightweight single page application template that is built to emula
 
 The technologies used to create it are PHP, MySQL, and JavaScript.
 
-It is end-to-end built with Silex, Twig, Sass, & Webpack.
+It is an end-to-end application built with Silex, Twig, Sass, & Webpack.
 
 Other technologies used in development are listed in package.json.
 
