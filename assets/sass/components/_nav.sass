@@ -1,0 +1,36 @@
+nav
+  background: $white
+  box-shadow: 0 0.5px 0.5px 0 $gray
+  position: fixed
+  width: 100vw
+  z-index: 100
+  ul
+    display: flex
+    margin: 10px 20px 0 0
+    li
+      margin: 12px
+      &:nth-child(2)
+        margin-left: auto
+      a
+        background: $white
+        color: $blue
+        display: flex
+        justify-content: center
+        padding: 10px
+        border: 1px solid $gray
+        border-radius: 5px
+        font-weight: lighter
+        width: 80px
+        &:hover
+          background: $blue
+          border: 1px solid $white
+          color: $white
+      .title
+        border: none
+        font-size: 25px
+        font-family: $basic
+        &:hover
+          background: white
+          border: none
+          color: $light
+          text-shadow: 1px 1px 50px $gray
