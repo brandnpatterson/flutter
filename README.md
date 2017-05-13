@@ -35,7 +35,7 @@ npm start (gulp clean && gulp)
 
 flutter will open in your default browser!
 
-### Move SQL file to the proper folder in MAMP
+### Use the SQL file in this repo. Move it into your MAMP directory
 
 Coming soon!..
 
