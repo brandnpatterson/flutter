@@ -11,6 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Install the following package managers to get started
 
+* [MAMP](https://www.mamp.info/en/) - (XAMPP possibly in the future)
 * [Composer](https://getcomposer.org/) - PHP package manager
 * [NPM](https://nodejs.org/en/) - Installed with Node.js
 * [Yarn](https://getcomposer.org/) (optional)
