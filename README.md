@@ -41,10 +41,10 @@ Coming soon!..
 
 ### Autoloading with Composer
 
-flutter uses autoloading with Composer. The following
+flutter uses autoloading with Composer. Use the following command to auto-load your PHP with the optimal flag
 
 ```
-Give an example
+composer dump-autoload -o
 ```
 
 ## Built With
