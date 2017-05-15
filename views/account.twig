@@ -1,0 +1,49 @@
+{% extends 'templates/app.twig' %}
+
+{% block nav %}
+<li>
+  <a class="show-modal" href="#0">
+    <i class="material-icons">mode_edit</i>
+  </a>
+</li>
+{% endblock %}
+
+{% block app %}
+<div class="wrapper-post">
+  <div class="post">
+    <div class="user-info">
+      <img src="../assets/images/flutter.jpeg" />
+      <p>
+        Username / Time / Date
+      </p>
+      <div class="delete-post">
+        <i class="material-icons">clear</i>
+      </div>
+    </div>
+    <div>
+      <p>
+        Nearly a year ago, Twitter announced it would begin distancing itself from the requirement that all tweets could only contain 140 characters by no longer counting some things – like media attachments or @ replies towards the character count.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="modal hidden">
+  <div class="wrapper-form wrapper-create-post">
+    <div class="header">
+      <div class="close-btn">
+        <i class="material-icons">clear</i>
+      </div>
+    </div>
+    <form action="/action_page.php" class="form">
+      <p>
+        What's up?
+      </p>
+      <div>
+        <textarea placeholder="140 characters or less..." /></textarea><p></p><!-- next to input for form validation -->
+      </div>
+      <input type="submit" value="Flutter">
+    </form>
+  </div><!-- end sign in -->
+</div><!-- end modal -->
+{% endblock %}
