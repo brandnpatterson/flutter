@@ -1,12 +1,7 @@
 {% extends 'templates/app.twig' %}
 
 {% block nav %}
-<li>
-  <a class="title" href="#0">FLUTTER</a>
-</li>
-<li>
-  <a class="show-modal" href="#0">Sign in</a>
-</li>
+
 {% endblock %}
 
 {% block app %}
@@ -25,6 +20,7 @@
       <input class="password-sign-up" type="password" /><p></p>
     </div>
     <input type="submit" value="Sign Up">
+    <a class="show-modal" href="#0">Or Sign in</a>
   </form>
 </div><!-- end sign-up -->
 {% include 'sign-in-modal.twig' %}

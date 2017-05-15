@@ -1,10 +1,10 @@
 /*
-  Flutter Sign in
+  Flutter Sign Up
 */
 
 import formValidation from './form-validation';
 
-var signIn = {
+var signUp = {
   init: function () {
     this.cacheDOM();
     this.bindEvents();
@@ -12,12 +12,12 @@ var signIn = {
   },
   cacheDOM: function () {
     this.closeBtn   = document.querySelector('.close-btn');
-    this.formSignIn = document.querySelector('.form-sign-in');
-    var emailSignIn = document.querySelector('.email-sign-in');
-    var passSignIn  = document.querySelector('.password-sign-in');
+    this.formSignUp = document.querySelector('.form-sign-up');
+    var emailSignUp = document.querySelector('.email-sign-up');
+    var passSignUp  = document.querySelector('.password-sign-up');
     this.requiredInputs = [
-      emailSignIn,
-      passSignIn
+      emailSignUp,
+      passSignUp
     ];
   },
   initPlaceholders: function () {
@@ -35,7 +35,7 @@ var signIn = {
       }
     }
     var ifElAddEvent = this.ifElAddEvent;
-    ifElAddEvent(this.formSignIn , 'click', this.handleLiveValidation.bind(this));
+    ifElAddEvent(this.formSignUp , 'click', this.handleLiveValidation.bind(this));
     ifElAddEvent(document, 'click', this.onInputSelect.bind(this));
   },
   handleLiveValidation: function (event) {
@@ -69,4 +69,4 @@ var signIn = {
     }, this);
   }
 }
-signIn.init();
+signUp.init();
