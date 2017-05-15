@@ -1,17 +1,22 @@
 <?php
 
-use Silex\Application as App;
+use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Silex\Provider\TwigServiceProvider;
 
-$app->get('/', function(App $app) {
+$app->register(new TwigServiceProvider, [
+  'twig.path' => __DIR__ . '/../views'
+]);
+
+$app->get('/', function(Application $app) {
   return $app['twig']->render('sign-in.twig');
 });
 
-$app->get('/sign-up', function(App $app) {
+$app->get('/sign-up', function(Application $app) {
   return $app['twig']->render('sign-up.twig');
 });
 
-$app->get('/account', function(App $app) {
+$app->get('/account', function(Application $app) {
   return $app['twig']->render('account.twig');
 });

@@ -5,6 +5,7 @@
   "author": "Brandon Patterson",
   "main": "public/index.php",
   "scripts": {
+    "dump": "composer dump-autoload -o",
     "start": "gulp clean && gulp"
   },
   "license": "MIT",
