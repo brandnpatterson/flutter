@@ -51,7 +51,7 @@ composer dump-autoload -o
 The technologies used to create it are PHP, MySQL, and JavaScript.
 * [Silex](https://silex.sensiolabs.org/) - The microframework used
 * [JavaScript](https://www.javascript.com/)
-* [Sass](http://sass-lang.com/) - Styling
+* [Sass](http://sass-lang.com/)
 
 ## Authors
 
