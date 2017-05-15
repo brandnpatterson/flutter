@@ -1,26 +1,45 @@
+// dynamic rules used for form validaiton
 .input-fail
   color: $fail
-  padding-left: 10px
   font-size: 12px
+  padding-left: 10px
 .input-success
-  position: absolute
-  left: 30px
   color: $success
   font-size: 16px
+  left: 30px
+  position: absolute
 .hidden
   display: none
 .flex
   display: flex
   justify-content: center
 
-.modal-form
-  position: relative
+// wrapper form
+.wrapper-form
+  background: $white
+  border-radius: 10px
+  padding: 0 0 40px
+  height: contain
+  width: contain
+  .header
+    display: flex
+    align-items: center
+    .title
+      color: $gray
+    .close-btn
+      cursor: pointer
+      margin-right: 10px
+
+// default form
+.form
+  color: $gray
   display: flex
   align-items: center
   flex-direction: column
   padding: 70px 0 0
   height: 100%
   width: 100%
+  position: relative
   input
     border-radius: 2.5px
     margin: 10px

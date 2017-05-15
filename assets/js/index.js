@@ -2,4 +2,5 @@
   Webpack entry point
 */
 
-import './app.js';
+import './new-post.js';
+import './sign-in.js';

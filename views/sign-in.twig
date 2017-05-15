@@ -1,49 +1,23 @@
 {% extends 'templates/app.twig' %}
 
-{% block main %}
+{% block nav %}
+<li>
+  <a class="title" href="#">FLUTTER</a>
+</li>
+<li>
+  <a class="show-modal" href="#">Sign In</a>
+</li>
+<li>
+  <a href="sign-up">Sign Up</a>
+</li>
+{% endblock %}
 
-<nav>
-  <ul>
-    <li>
-      <a class="title" href="#">FLUTTER</a>
-    </li>
-    <li>
-      <a class="sign-in" href="#">Sign In</a>
-    </li>
-    <li>
-      <a href="sign-up">Sign Up</a>
-    </li>
-  </ul>
-</nav>
+{% block app %}
 <div>
   <img class="landing" src="../assets/images/flutter.jpeg" alt="flutter image" />
   <div class="text-content">
     <h2><a href="#">Say Hello!</a></h2>
   </div>
 </div>
-<div class="modal hidden">
-  <div class="modal-wrapper">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title">
-          Sign In to Flutter
-        </div>
-        <div class="close-btn">
-          <i class="material-icons">clear</i>
-        </div>
-      </div>
-      <form action="/action_page.php" class="modal-form">
-        <i class="material-icons">sentiment_very_satisfied</i>
-        <div>
-          <input type="text" /><p></p>
-        </div>
-        <div>
-          <input type="password" /><p></p>
-        </div>
-        <input type="submit" value="Sign In">
-      </form>
-    </div>
-  </div>
-</div><!-- modal sign in -->
-
+{% include 'sign-in-modal.twig' %}
 {% endblock %}

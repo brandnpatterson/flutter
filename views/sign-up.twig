@@ -1,5 +1,31 @@
 {% extends 'templates/app.twig' %}
 
-{% block main %}
-  Hello
+{% block nav %}
+<li>
+  <a class="title" href="#0">FLUTTER</a>
+</li>
+<li>
+  <a class="show-modal" href="#0">Sign in</a>
+</li>
+{% endblock %}
+
+{% block app %}
+<div class="wrapper-form wrapper-sign-up">
+  <div class="header">
+    <div class="title">
+      Sign Up Today.
+    </div>
+  </div>
+  <form action="/action_page.php" class="form form-sign-up">
+    <i class="material-icons">sentiment_very_satisfied</i>
+    <div>
+      <input class="email-sign-up" type="text" /><p></p>
+    </div>
+    <div>
+      <input class="password-sign-up" type="password" /><p></p>
+    </div>
+    <input type="submit" value="Sign Up">
+  </form>
+</div><!-- end sign-up -->
+{% include 'sign-in-modal.twig' %}
 {% endblock %}

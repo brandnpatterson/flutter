@@ -7,8 +7,19 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   </head>
   <body>
-    {% block main %}
-    {% endblock %}
+    <div id="app">
+      <nav>
+        <ul>
+          {% block nav %}
+            <!-- dynamic li for nav -->
+          {% endblock %}
+        </ul>
+      </nav><!-- end nav -->
+
+      {% block app %}
+        <!-- dynamic app content -->
+      {% endblock %}
+    </div><!-- end app content -->
     <footer>
       <div>
         <a href='http://brandnpatterson.github.io/' target='_blank'>
@@ -19,7 +30,7 @@
           &nbsp; Brandon Patterson. All Rights Reserved.
         </a>
       </div>
-    </footer>
+    </footer><!-- end footer -->
     <script src="js/bundle.js"></script>
   </body>
 </html>
