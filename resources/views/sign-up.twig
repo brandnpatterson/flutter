@@ -10,13 +10,13 @@
       Sign Up Today.
     </div>
   </div>
-  <form action="{{ path_for('sign-up') }}" class="form form-sign-up">
+  <form action="{{ path_for('sign-up') }}" method="post" class="form form-sign-up">
     <i class="material-icons">sentiment_very_satisfied</i>
     <div>
-      <input class="email-sign-up" type="text" /><p></p>
+      <input class="email-sign-up" name="email" type="email" autocomplete="on" /><p></p>
     </div>
     <div>
-      <input class="password-sign-up" type="password" /><p></p>
+      <input class="password-sign-up" name="password" type="password" /><p></p>
     </div>
     <input type="submit" value="Sign Up">
     <a class="show-modal" href="#0">Or Sign in</a>

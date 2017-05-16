@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Controllers\Controller;
+use App\Models\User;
 
 class SignUpController extends Controller
 {
@@ -13,12 +13,11 @@ class SignUpController extends Controller
 
   public function postSignUp($request, $response)
   {
-    var_dump($response->getParams());
-    // $user = User::create([
-    //   'email' => $request->getParam('email'),
-    //   'password' => password_hash($request->getParam('password'), PASSWORD_DEFAULT),
-    // ]);
-    //
-    // return $response->withRedirect($this->router->pathFor('account'));
+    $user = User::create([
+      'email' => $request->getParam('email'),
+      'password' => password_hash($request->getParam('password'), PASSWORD_DEFAULT),
+    ]);
+
+    return $response->withRedirect($this->router->pathFor('account'));
   }
 }

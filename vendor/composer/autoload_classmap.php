@@ -6,8 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controllers\\AccountController' => $baseDir . '/app/Controllers/AccountController.php',
     'App\\Controllers\\Controller' => $baseDir . '/app/Controllers/Controller.php',
     'App\\Controllers\\SignInController' => $baseDir . '/app/Controllers/SignInController.php',
+    'App\\Controllers\\SignUpController' => $baseDir . '/app/Controllers/SignUpController.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
