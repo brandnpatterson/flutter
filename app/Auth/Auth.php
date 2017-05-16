@@ -6,6 +6,17 @@ use App\Models\User;
 
 class Auth
 {
+
+  public function user()
+  {
+    return User::find($_SESSION['user']);
+  }
+
+  public function check()
+  {
+    return isset($_SESSION['user']);
+  }
+
   public function attempt($email, $password)
   {
     $user = User::where('email', $email)->first();
@@ -15,7 +26,7 @@ class Auth
     }
 
     if (password_verify($password, $user->password)) {
-      // $_SESSION['user'] = $user->id;
+      $_SESSION['user'] = $user->id;
       return true;
     }
 

@@ -132,10 +132,10 @@ class ComposerStaticInitf6e73a38506d323dacbcc9d74cf666f2
     );
 
     public static $classMap = array (
+        'App\\Auth\\Auth' => __DIR__ . '/../..' . '/app/Auth/Auth.php',
         'App\\Controllers\\AccountController' => __DIR__ . '/../..' . '/app/Controllers/AccountController.php',
+        'App\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Controllers/AuthController.php',
         'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Controllers/Controller.php',
-        'App\\Controllers\\SignInController' => __DIR__ . '/../..' . '/app/Controllers/SignInController.php',
-        'App\\Controllers\\SignUpController' => __DIR__ . '/../..' . '/app/Controllers/SignUpController.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
