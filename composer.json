@@ -3,10 +3,9 @@
       "name": "Brandon Patterson"
     },
     "require": {
-        "silex/silex": "^2.1",
-        "twig/twig": "^1.33",
-        "doctrine/dbal": "^2.5",
-        "dflydev/doctrine-orm-service-provider": "^2.0"
+        "slim/slim": "^3.0",
+        "slim/twig-view": "^2.2",
+        "illuminate/database": "^5.4"
     },
     "autoload": {
       "psr-4": {
