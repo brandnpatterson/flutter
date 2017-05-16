@@ -1,4 +1,4 @@
-<?php
+<?php namespace src\routes\web;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,6 +17,6 @@ $app->get('/sign-up', function(Application $app) {
   return $app['twig']->render('sign-up.twig');
 });
 
-$app->get('/account', function(Application $app) {
+$app->get('/{email}', function(Application $app) {
   return $app['twig']->render('account.twig');
 });

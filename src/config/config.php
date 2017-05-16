@@ -1,4 +1,4 @@
-<?php namespace config;
+<?php namespace src\config\config;
 
 use Silex\Provider\DoctrineServiceProvider;
 
@@ -10,5 +10,5 @@ $app->register(new DoctrineServiceProvider, [
     'username' => 'root',
     'password' => 'root',
     'charset'  => 'utf-8'
-  ]
+  ];
 ]);
