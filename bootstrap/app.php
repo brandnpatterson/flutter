@@ -2,8 +2,7 @@
 
 use Slim\Views\Twig as View;
 use Slim\Views\TwigExtension as TwigExtension;
-use App\Controllers\SignInController as SignInController;
-use App\Controllers\SignUpController as SignUpController;
+use App\Controllers\AuthController as AuthController;
 use App\Controllers\AccountController as AccountController;
 
 session_start();
@@ -49,16 +48,16 @@ $container['view'] = function ($container) {
   return $view;
 };
 
-$container['SignInController'] = function ($container) {
-  return new SignInController($container);
-};
-
-$container['SignUpController'] = function ($container) {
-  return new SignUpController($container);
+$container['AuthController'] = function ($container) {
+  return new AuthController($container);
 };
 
 $container['AccountController'] = function ($container) {
   return new AccountController($container);
+};
+
+$container['auth'] = function ($container) {
+  return new \App\Auth\Auth;
 };
 
 require_once __DIR__ . '/../app/routes.php';

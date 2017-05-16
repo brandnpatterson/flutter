@@ -8,6 +8,7 @@ import sync       from 'browser-sync';
 import webpack    from 'webpack-stream';
 
 var options = {};
+var reload = sync.reload;
 
 gulp.task('browser-sync', () => {
   sync.init(['public/index.php', 'assets/**/*', 'views/**/*'], {
@@ -46,6 +47,6 @@ gulp.task('styles', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch('assets/js/**/*', ['scripts']);
-  gulp.watch('assets/sass/**/*', ['styles']);
+  gulp.watch('assets/js/**/*', ['scripts', reload]);
+  gulp.watch('assets/sass/**/*', ['styles', reload]);
 });
