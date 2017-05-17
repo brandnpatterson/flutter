@@ -22,7 +22,8 @@
 {% endblock %}
 
 {% block app %}
-<!-- <div class="wrapper-post">
+{% for posts in flutter_posts %}
+<div class="wrapper-post">
   <div class="post">
     <div class="user-info">
       <img src="../assets/images/flutter.jpeg" />
@@ -34,12 +35,11 @@
       </div>
     </div>
     <div>
-      <p>
-        Nearly a year ago, Twitter announced it would begin distancing itself from the requirement that all tweets could only contain 140 characters by no longer counting some things – like media attachments or @ replies towards the character count.
-      </p>
+      {{ auth.user.flutter_posts }}
     </div>
   </div>
-</div> -->
+</div>
+{% endfor %}
 
 <div class="modal hidden">
   <div class="wrapper-form wrapper-create-post">
@@ -48,7 +48,7 @@
         <i class="material-icons">clear</i>
       </div>
     </div>
-    <form action="/flutter/public/account" class="form">
+    <form action="" method="post" class="form">
       <p>
         What's up?
       </p>
