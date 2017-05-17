@@ -52,7 +52,7 @@ $container['validator'] = function ($container) {
 };
 
 $container['view'] = function ($container) {
-  $view = new View(__DIR__ . '/../resources/views', [
+  $view = new View(__DIR__ . '/../views', [
     'cache' => false
   ]);
 
