@@ -8,7 +8,7 @@ var formValidation = module.exports = {
     {
       placeholder: 'password',
       regex: '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$',
-      error: 'Must have upper, lower case and number'
+      error: 'Must have upper, lower case & number'
     }
   ],
 }

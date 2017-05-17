@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class FlutterPost extends Model
 {
-  protected $table = 'users';
+  protected $table = 'flutter_posts';
   protected $fillable = [
-    'email',
-    'password'
+    'user_id',
+    'flutter_post'
   ];
   public $timestamps = false;
 }

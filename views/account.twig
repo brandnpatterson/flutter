@@ -48,12 +48,12 @@
         <i class="material-icons">clear</i>
       </div>
     </div>
-    <form action="" method="post" class="form">
+    <form action="{{ path_for('account') }}" method="post" class="form">
       <p>
         What's up?
       </p>
       <div>
-        <textarea placeholder="140 characters or less..." /></textarea><p></p><!-- next to input for form validation -->
+        <textarea name="flutter_post" placeholder="140 characters or less..." /></textarea><p></p><!-- next to input for form validation -->
       </div>
       <input type="submit" value="Flutter">
     </form>

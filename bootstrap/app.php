@@ -7,6 +7,7 @@ use Slim\Views\TwigExtension as TwigExtension;
 
 use \App\Controllers\AuthController as AuthController;
 use \App\Controllers\AccountController as AccountController;
+use \App\Controllers\FlutterPostController as FlutterPostController;
 
 use \App\Auth\Auth as Auth;
 use \App\Validation\Validator as Validator;
@@ -75,6 +76,10 @@ $container['AuthController'] = function ($container) {
 
 $container['AccountController'] = function ($container) {
   return new AccountController($container);
+};
+
+$container['FlutterPostController'] = function ($container) {
+  return new FlutterPostController($container);
 };
 
 $app->add(new ValidationErrorsMiddleware($container));
