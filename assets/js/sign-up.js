@@ -13,6 +13,7 @@ var signUp = {
   cacheDOM: function () {
     this.closeBtn   = document.querySelector('.close-btn');
     this.formSignUp = document.querySelector('.form-sign-up');
+    this.failEmail  = document.querySelector('.input-fail-email');
     var emailSignUp = document.querySelector('.email-sign-up');
     var passSignUp  = document.querySelector('.password-sign-up');
     this.requiredInputs = [
@@ -46,7 +47,7 @@ var signUp = {
         return;
       } else if (input.value.match(formValidation.data[index].regex)) {
         input.parentNode.classList.add('flex');
-        validationMessage.textContent = '√';
+        this.failEmail ? validationMessage.textContent = '' : validationMessage.textContent = '√';
         validationMessage.classList.remove('input-fail');
         validationMessage.classList.add('input-success');
       } else {
@@ -58,6 +59,7 @@ var signUp = {
       }
     }, this);
   },
+
   onInputSelect: function (event) {
     this.requiredInputs.map(function (input, index) {
       var validationMessage = input.nextSibling;

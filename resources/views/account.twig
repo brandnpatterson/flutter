@@ -2,8 +2,11 @@
 
 {% block nav %}
 {% if auth.check %}
-  <li>
-    <p>Logged In</p>
+  <li class="user-name">
+    <p>{{ auth.user.email }}</p>
+  </li>
+  <li class="sign-out">
+    <a href="{{ path_for('sign-out') }}">Sign Out</a>
   </li>
 {% else %}
   <li>
