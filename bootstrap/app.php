@@ -11,8 +11,9 @@ use \App\Controllers\FlutterPostController as FlutterPostController;
 
 use \App\Auth\Auth as Auth;
 use \App\Validation\Validator as Validator;
-use \App\Middleware\ValidationErrorsMiddleware;
+
 use \App\Middleware\OldInputMiddleware;
+use \App\Middleware\ValidationErrorsMiddleware;
 
 session_start();
 
@@ -82,8 +83,8 @@ $container['FlutterPostController'] = function ($container) {
   return new FlutterPostController($container);
 };
 
-$app->add(new ValidationErrorsMiddleware($container));
 $app->add(new OldInputMiddleware($container));
+$app->add(new ValidationErrorsMiddleware($container));
 
 v::with('App\\Validation\\');
 

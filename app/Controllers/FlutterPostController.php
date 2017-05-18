@@ -10,9 +10,9 @@ class FlutterPostController extends Controller
 
   public function postFlutter($request, $response)
   {
-    $flutterPosts = FlutterPost::create([
+    $flutters = FlutterPost::create([
       'user_id' => $_SESSION['user'],
-      'flutter_post' => $request->getParam('flutter_post'),
+      'text_field' => $request->getParam('text_field'),
     ]);
 
     return $response->withRedirect($this->router->pathFor('account'));

@@ -22,20 +22,17 @@
 {% endblock %}
 
 {% block app %}
-{% for posts in flutter_posts %}
+
+{% for posts in flutter_post %}
 <div class="wrapper-post">
   <div class="post">
     <div class="user-info">
       <img src="../assets/images/flutter.jpeg" />
-      <p>
-        Email / Time / Date
-      </p>
-      <div class="delete-post">
-        <i class="material-icons">clear</i>
-      </div>
     </div>
     <div>
-      {{ auth.user.flutter_posts }}
+      <p>
+        {{ flutter_post }}
+      </p>
     </div>
   </div>
 </div>
@@ -53,7 +50,7 @@
         What's up?
       </p>
       <div>
-        <textarea name="flutter_post" placeholder="140 characters or less..." /></textarea><p></p><!-- next to input for form validation -->
+        <textarea name="text_field" placeholder="140 characters or less..." autofocus /></textarea><p></p><!-- next to input for form validation -->
       </div>
       <input type="submit" value="Flutter">
     </form>

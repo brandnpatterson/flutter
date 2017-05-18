@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class FlutterPost extends Model
 {
-  protected $table = 'flutter_posts';
+  protected $table = 'flutters';
   protected $fillable = [
     'user_id',
-    'flutter_post'
+    'text_field'
   ];
   public $timestamps = false;
 }
