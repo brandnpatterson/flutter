@@ -33,9 +33,9 @@ class AuthController extends Controller
     return $response->withRedirect($this->router->pathFor('account'));
   }
 
-  public function getSignUp($request, $response)
+  public function getSignUp($request, $response, $errors = [])
   {
-    return $this->view->render($response, 'sign-up.twig');
+    return $this->view->render($response, 'sign-up.twig', ['errors' => $errors]);
   }
 
   public function postSignUp($request, $response)
@@ -45,7 +45,7 @@ class AuthController extends Controller
     ]);
 
     if($validation->failed()) {
-      return $response->withRedirect($this->router->pathFor('sign-up'));
+      return $this->getSignUp($request, $response, $validation->getErrors());
     }
 
     $user = User::create([

@@ -29,8 +29,8 @@ class Validator
     return !empty($this->errors);
   }
 
-  public function passed()
+  public function getErrors() 
   {
-    return empty($this->errors);
+    return $this->errors;
   }
 }

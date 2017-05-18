@@ -13,7 +13,6 @@ use \App\Auth\Auth as Auth;
 use \App\Validation\Validator as Validator;
 
 use \App\Middleware\OldInputMiddleware;
-use \App\Middleware\ValidationErrorsMiddleware;
 
 session_start();
 
@@ -84,7 +83,6 @@ $container['FlutterPostController'] = function ($container) {
 };
 
 $app->add(new OldInputMiddleware($container));
-$app->add(new ValidationErrorsMiddleware($container));
 
 v::with('App\\Validation\\');
 
