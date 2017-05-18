@@ -35,10 +35,6 @@ npm start (gulp clean && gulp)
 
 flutter will open in your default browser!
 
-### Use the SQL file in this repo. Move it into your MAMP directory
-
-Coming soon!..
-
 ### Autoloading with Composer
 
 flutter uses autoloading with Composer. Use the following command to auto-load your PHP with the optimal flag
