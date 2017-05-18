@@ -1,5 +1,5 @@
 /*
-  Delete post
+  Delete post - currently only deletes from DOM
 */
 
 var deleteSelectedPost = {
