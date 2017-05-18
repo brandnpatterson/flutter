@@ -44,8 +44,8 @@ composer dump-autoload -o
 ```
 
 ## Built With
-The technologies used to create it are PHP, MySQL, and JavaScript.
-* [Slim](https://www.slimframework.com/) - The microframework used
+The technologies used to create flutter are PHP, MySQL, and JavaScript.
+* [Slim](https://www.slimframework.com/) - PHP microframework
 * [JavaScript](https://www.javascript.com/)
 * [Sass](http://sass-lang.com/)
 
