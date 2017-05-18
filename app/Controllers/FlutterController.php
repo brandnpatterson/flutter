@@ -10,6 +10,7 @@ class FlutterController extends Controller
 
   public function getFlutter($request, $response)
   {
+    $this->updateFlutter();
     return $this->view->render($response, 'account.twig');
   }
 
