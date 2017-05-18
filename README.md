@@ -60,4 +60,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Thank you for checking out flutter
-* Feel free to use this template for any app you create that might need to use these technologies!
+* Feel free to use this as a template for any app you create that might need to use these technologies!
