@@ -36,7 +36,7 @@ var signIn = {
     }
     var ifElAddEvent = this.ifElAddEvent;
     ifElAddEvent(this.formSignIn , 'click', this.handleLiveValidation.bind(this));
-    ifElAddEvent(document, 'click', this.onInputSelect.bind(this));
+    ifElAddEvent(this.formSignIn, 'click', this.onInputSelect.bind(this));
   },
   handleLiveValidation: function (event) {
     this.requiredInputs.map(function (input, index) {

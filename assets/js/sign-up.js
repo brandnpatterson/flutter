@@ -37,7 +37,7 @@ var signUp = {
     }
     var ifElAddEvent = this.ifElAddEvent;
     ifElAddEvent(this.formSignUp , 'click', this.handleLiveValidation.bind(this));
-    ifElAddEvent(document, 'click', this.onInputSelect.bind(this));
+    ifElAddEvent(this.formSignUp, 'click', this.onInputSelect.bind(this));
   },
   handleLiveValidation: function (event) {
     this.requiredInputs.map(function (input, index) {
@@ -59,7 +59,6 @@ var signUp = {
       }
     }, this);
   },
-
   onInputSelect: function (event) {
     this.requiredInputs.map(function (input, index) {
       var validationMessage = input.nextSibling;

@@ -46,9 +46,9 @@ $container['view'] = function ($container) {
   $view->getEnvironment()->addGlobal('auth', [
     'check' => $container->auth->check(),
     'flutter' => $container->auth->flutter(),
-    'user' => $container->auth->user(),
+    'user' => $container->auth->user()
   ]);
-  
+
   return $view;
 };
 

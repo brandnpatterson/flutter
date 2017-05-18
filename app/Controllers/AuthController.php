@@ -22,7 +22,7 @@ class AuthController extends Controller
   public function postSignIn($request, $response)
   {
 
-    $auth = $this->auth->attempt(
+    $auth = $this->auth->attemptSignIn(
       $request->getParam('email'),
       $request->getParam('password')
     );
@@ -53,7 +53,7 @@ class AuthController extends Controller
       'password' => password_hash($request->getParam('password'), PASSWORD_DEFAULT),
     ]);
 
-    $this->auth->attempt($user->email, $request->getParam('password'));
+    $this->auth->attemptSignIn($user->email, $request->getParam('password'));
 
     if($validation->passed()) {
       return $response->withRedirect($this->router->pathFor('account'));

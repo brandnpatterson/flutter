@@ -20,8 +20,13 @@ class FlutterController extends Controller
       'text_area' => $request->getParam('text_area'),
     ]);
 
-    $this->auth->getFlutter();
-
+    $this->updateFlutter();
     return $response->withRedirect($this->router->pathFor('account'));
+  }
+
+  public function updateFlutter()
+  {
+    $flutter = Flutter::where('user_id', $_SESSION['user'])->first();
+    $_SESSION['flutter'] = $flutter->id;
   }
 }

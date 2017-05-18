@@ -7,7 +7,7 @@ $capsule = new Capsule;
 $capsule->addConnection([
   'driver' => 'mysql',
   'host' => 'localhost',
-  'database' => 'flutter',
+  'database' => 'new-database',
   'username' => 'root',
   'password' => 'root',
   'charset' => 'utf8',

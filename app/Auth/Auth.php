@@ -30,7 +30,7 @@ class Auth
     return [$userIsSet, $flutterIsSet];
   }
 
-  public function attempt($email, $password)
+  public function attemptSignIn($email, $password)
   {
     $user = User::where('email', $email)->first();
 
@@ -40,18 +40,11 @@ class Auth
 
     if (password_verify($password, $user->password)) {
       $_SESSION['user'] = $user->id;
-      $this->getFlutter();
 
       return true;
     }
 
     return false;
-  }
-
-  public function getFlutter()
-  {
-    $flutter = Flutter::where('user_id', $_SESSION['user'])->first();
-    $_SESSION['flutter'] = $flutter->id;
   }
 
   public function signOut()

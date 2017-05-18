@@ -10,3 +10,4 @@ $app->get('/sign-out', 'AuthController:getSignOut')->setName('sign-out');
 
 $app->get('/account', 'FlutterController:getFlutter')->setName('account');
 $app->post('/account', 'FlutterController:postFlutter');
+$app->delete('/account', 'FlutterController:deleteFlutter');

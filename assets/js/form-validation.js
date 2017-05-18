@@ -1,3 +1,6 @@
+/*
+  Form validation data
+*/
 var formValidation = module.exports = {
   data: [
     {
