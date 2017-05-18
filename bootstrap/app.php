@@ -1,44 +1,27 @@
 <?php
 
-use Illuminate\Database\Capsule\Manager as Manager;
-use Respect\Validation\Validator as v;
 use Slim\Views\Twig as View;
 use Slim\Views\TwigExtension as TwigExtension;
-
-use \App\Controllers\AuthController as AuthController;
-use \App\Controllers\AccountController as AccountController;
-use \App\Controllers\FlutterPostController as FlutterPostController;
+use Respect\Validation\Validator as v;
 
 use \App\Auth\Auth as Auth;
 use \App\Validation\Validator as Validator;
 
-use \App\Middleware\OldInputMiddleware;
+use \App\Controllers\AuthController as AuthController;
+use \App\Controllers\FlutterController as FlutterController;
 
 session_start();
 
 require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../config/database.php';
 
 $app = new \Slim\App([
   'settings' => [
-    'displayErrorDetails' => true,
-    'db' => [
-      'driver' => 'mysql',
-      'host' => 'localhost',
-      'database' => 'flutter',
-      'username' => 'root',
-      'password' => 'root',
-      'charset' => 'utf8',
-      'collation' => 'utf8_general_ci'
-    ]
-  ],
+    'displayErrorDetails' => true
+  ]
 ]);
 
 $container = $app->getContainer();
-
-$capsule = new Manager;
-$capsule->addConnection($container['settings']['db']);
-$capsule->setAsGlobal();
-$capsule->bootEloquent();
 
 $container['db'] = function ($container) use ($capsule) {
   return $capsule;
@@ -53,9 +36,7 @@ $container['validator'] = function ($container) {
 };
 
 $container['view'] = function ($container) {
-  $view = new View(__DIR__ . '/../views', [
-    'cache' => false
-  ]);
+  $view = new View(__DIR__ . '/../views');
 
   $view->addExtension(new TwigExtension(
     $container->router,
@@ -64,9 +45,10 @@ $container['view'] = function ($container) {
 
   $view->getEnvironment()->addGlobal('auth', [
     'check' => $container->auth->check(),
-    'user'  => $container->auth->user()
+    'flutter' => $container->auth->flutter(),
+    'user' => $container->auth->user(),
   ]);
-
+  
   return $view;
 };
 
@@ -74,15 +56,9 @@ $container['AuthController'] = function ($container) {
   return new AuthController($container);
 };
 
-$container['AccountController'] = function ($container) {
-  return new AccountController($container);
+$container['FlutterController'] = function ($container) {
+  return new FlutterController($container);
 };
-
-$container['FlutterPostController'] = function ($container) {
-  return new FlutterPostController($container);
-};
-
-$app->add(new OldInputMiddleware($container));
 
 v::with('App\\Validation\\');
 

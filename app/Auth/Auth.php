@@ -3,6 +3,7 @@
 namespace App\Auth;
 
 use App\Models\User;
+use App\Models\Flutter;
 
 class Auth
 {
@@ -14,9 +15,19 @@ class Auth
     }
   }
 
+  public function flutter()
+  {
+    if (isset($_SESSION['flutter'])) {
+      $signedInFlutter = Flutter::all()->where('user_id', $_SESSION['user']);
+      return $signedInFlutter;
+    }
+  }
+
   public function check()
   {
-    return isset($_SESSION['user']);
+    $userIsSet = isset($_SESSION['user']);
+    $flutterIsSet = isset($_SESSION['flutter']);
+    return [$userIsSet, $flutterIsSet];
   }
 
   public function attempt($email, $password)
@@ -29,10 +40,18 @@ class Auth
 
     if (password_verify($password, $user->password)) {
       $_SESSION['user'] = $user->id;
+      $this->getFlutter();
+
       return true;
     }
 
     return false;
+  }
+
+  public function getFlutter()
+  {
+    $flutter = Flutter::where('user_id', $_SESSION['user'])->first();
+    $_SESSION['flutter'] = $flutter->id;
   }
 
   public function signOut()

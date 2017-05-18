@@ -141,15 +141,10 @@ class ComposerStaticInitf6e73a38506d323dacbcc9d74cf666f2
 
     public static $classMap = array (
         'App\\Auth\\Auth' => __DIR__ . '/../..' . '/app/Auth/Auth.php',
-        'App\\Controllers\\AccountController' => __DIR__ . '/../..' . '/app/Controllers/AccountController.php',
         'App\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Controllers/AuthController.php',
         'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Controllers/Controller.php',
-        'App\\Controllers\\FlutterPostController' => __DIR__ . '/../..' . '/app/Controllers/FlutterPostController.php',
-        'App\\FlutterPost\\Flutter' => __DIR__ . '/../..' . '/app/FlutterPost/FlutterPost.php',
-        'App\\Middleware\\Middleware' => __DIR__ . '/../..' . '/app/Middleware/Middlware.php',
-        'App\\Middleware\\OldInputMiddleware' => __DIR__ . '/../..' . '/app/Middleware/OldInputMiddleware.php',
-        'App\\Middleware\\ValidationErrorsMiddleware' => __DIR__ . '/../..' . '/app/Middleware/ValidationErrorsMiddleware.php',
-        'App\\Models\\FlutterPost' => __DIR__ . '/../..' . '/app/Models/FlutterPost.php',
+        'App\\Controllers\\FlutterController' => __DIR__ . '/../..' . '/app/Controllers/FlutterController.php',
+        'App\\Models\\Flutter' => __DIR__ . '/../..' . '/app/Models/Flutter.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Validation\\EmailAvailable' => __DIR__ . '/../..' . '/app/Validation/EmailAvailable.php',
         'App\\Validation\\EmailAvailableException' => __DIR__ . '/../..' . '/app/Validation/EmailAvailableException.php',

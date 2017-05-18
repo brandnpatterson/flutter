@@ -3,11 +3,11 @@
 namespace App\Controllers;
 
 use App\Models\User;
-use App\Models\FlutterPosts;
 use Respect\Validation\Validator as v;
 
 class AuthController extends Controller
 {
+
   public function getSignOut($request, $response)
   {
     $this->auth->signOut();

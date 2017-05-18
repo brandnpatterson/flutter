@@ -7,15 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Auth\\Auth' => $baseDir . '/app/Auth/Auth.php',
-    'App\\Controllers\\AccountController' => $baseDir . '/app/Controllers/AccountController.php',
     'App\\Controllers\\AuthController' => $baseDir . '/app/Controllers/AuthController.php',
     'App\\Controllers\\Controller' => $baseDir . '/app/Controllers/Controller.php',
-    'App\\Controllers\\FlutterPostController' => $baseDir . '/app/Controllers/FlutterPostController.php',
-    'App\\FlutterPost\\Flutter' => $baseDir . '/app/FlutterPost/FlutterPost.php',
-    'App\\Middleware\\Middleware' => $baseDir . '/app/Middleware/Middlware.php',
-    'App\\Middleware\\OldInputMiddleware' => $baseDir . '/app/Middleware/OldInputMiddleware.php',
-    'App\\Middleware\\ValidationErrorsMiddleware' => $baseDir . '/app/Middleware/ValidationErrorsMiddleware.php',
-    'App\\Models\\FlutterPost' => $baseDir . '/app/Models/FlutterPost.php',
+    'App\\Controllers\\FlutterController' => $baseDir . '/app/Controllers/FlutterController.php',
+    'App\\Models\\Flutter' => $baseDir . '/app/Models/Flutter.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Validation\\EmailAvailable' => $baseDir . '/app/Validation/EmailAvailable.php',
     'App\\Validation\\EmailAvailableException' => $baseDir . '/app/Validation/EmailAvailableException.php',

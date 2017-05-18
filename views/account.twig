@@ -2,16 +2,17 @@
 
 {% block nav %}
 {% if auth.check %}
-  <li class="user-name">
-    <p>{{ auth.user.email }}</p>
-  </li>
   <li class="sign-out">
     <a href="{{ path_for('sign-out') }}">Sign Out</a>
+  </li>
+  <li class="user-name">
+    <p>{{ auth.user.email }}</p>
   </li>
 {% else %}
   <li>
     <p>Not Logged In</p>
   </li>
+
 {% endif %}
 
 <li>
@@ -22,20 +23,19 @@
 {% endblock %}
 
 {% block app %}
+<div class="buffer"></div>
 
-{% for posts in flutter_post %}
-<div class="wrapper-post">
-  <div class="post">
-    <div class="user-info">
-      <img src="../assets/images/flutter.jpeg" />
-    </div>
-    <div>
-      <p>
-        {{ flutter_post }}
-      </p>
+{% for flutters in auth.flutter %}
+  <div class="wrapper-post">
+    <div class="post">
+      <div class="user-info">
+        <img src="../assets/images/flutter.jpeg" />
+      </div>
+      <div>
+        <p>{{ flutters.text_area }}</p>
+      </div>
     </div>
   </div>
-</div>
 {% endfor %}
 
 <div class="modal hidden">
@@ -50,7 +50,7 @@
         What's up?
       </p>
       <div>
-        <textarea name="text_field" placeholder="140 characters or less..." autofocus /></textarea><p></p><!-- next to input for form validation -->
+        <textarea name="text_area" placeholder="140 characters or less..." autofocus /></textarea><p></p><!-- next to input for form validation -->
       </div>
       <input type="submit" value="Flutter">
     </form>
