@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.35)
 # Database: flutter
-# Generation Time: 2017-05-18 22:53:58 +0000
+# Generation Time: 2017-05-19 00:13:25 +0000
 # ************************************************************
 
 
@@ -18,6 +18,29 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table flutters
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `flutters`;
+
+CREATE TABLE `flutters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `text_area` varchar(140) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`,`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `flutters` WRITE;
+/*!40000 ALTER TABLE `flutters` DISABLE KEYS */;
+
+INSERT INTO `flutters` (`id`, `user_id`, `text_area`)
+VALUES
+	(1,1,'Hello World');
+
+/*!40000 ALTER TABLE `flutters` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table users
@@ -37,7 +60,7 @@ LOCK TABLES `users` WRITE;
 
 INSERT INTO `users` (`id`, `email`, `password`)
 VALUES
-	(71,'brandnpatterson@gmail.com','$2y$10$rYB/mGRfVlHLaDp6UEm/u.OPbEM7aRyqpHHj2m.VjgVd3xV7r9JSC');
+	(1,'brandnpatterson@gmail.com','$2y$10$rYB/mGRfVlHLaDp6UEm/u.OPbEM7aRyqpHHj2m.VjgVd3xV7r9JSC');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
