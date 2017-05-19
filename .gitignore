@@ -1,4 +1,6 @@
 node_modules
 npm-debug.log
-public
-vendor
+
+### I removed these upon submission so that you could see my work more easily ###
+# public
+# vendor

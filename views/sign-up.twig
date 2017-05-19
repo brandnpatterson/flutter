@@ -20,14 +20,19 @@
         <p class="input-fail-email">
           {{ errors.email | first }}
         </p>
-        <a class="show-modal input-fail" href="#0">Sign in instead?</a>
       {% endif %}
     </div>
     <div>
       <input class="password-sign-up" name="password" type="password" /><p></p>
     </div>
     <input type="submit" value="Sign Up">
-    <a class="show-modal" href="#0">Or Sign in</a>
+    <a class="show-modal {{ errors.email ? "input-fail" : "" }}" href="#0">
+      {% if errors.email %}
+        Sign in instead?
+      {% else %}
+        Or Sign in
+      {% endif %}
+    </a>
   </form>
 </div><!-- end sign-up -->
 {% include 'sign-in-modal.twig' %}

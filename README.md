@@ -1,7 +1,7 @@
 
 # flutter (currently in development)
 
-flutter is a lightweight single page application template built to emulate social media. The technologies used to create it are PHP, MySQL, and JavaScript. Other technologies used in development are listed in package.json. Feel free to use this template for any app that you create.
+flutter is a lightweight single page application template built to emulate social media. The technologies used to create it are PHP, MySQL, and JavaScript. Other technologies used in development are listed in package.json & composr.json. Feel free to use this template for any app that you create.
 
 ## Getting Started
 
@@ -27,13 +27,9 @@ Simply fork this repo and use
 npm install or yarn install && composer update
 ```
 
-And run
+### Import created database
 
-```
-npm start (gulp clean && gulp)
-```
-
-flutter will open in your default browser!
+In order to get started with flutter, you must import the flutter.sql file in the "db" directory into Sequal Pro (or your choice).
 
 ### Autoloading with Composer
 
@@ -42,6 +38,14 @@ flutter uses autoloading with Composer. Use the following command to auto-load y
 ```
 composer dump-autoload -o
 ```
+
+### Run the app
+
+```
+npm start
+```
+
+flutter will open in your default browser!
 
 ## Built With
 The technologies used to create flutter are PHP, MySQL, and JavaScript.
