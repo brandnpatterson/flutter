@@ -1,8 +1,8 @@
 /*
-  Delete post - currently only deletes from DOM
+  Delete post
 */
 
-var deleteSelectedPost = {
+var deletePost = {
   init: function () {
     this.cacheDOM();
     this.bindEvents();
@@ -12,12 +12,13 @@ var deleteSelectedPost = {
   },
   bindEvents: function () {
     for (var i = 0; i < this.deleteFlutterPost.length; i++) {
-      this.deleteFlutterPost[i].addEventListener('click', this.deleteSelectedPost.bind(this));
+      this.deleteFlutterPost[i].addEventListener('click', this.deletePost.bind(this));
     }
   },
-  deleteSelectedPost: function (event) {
+  deletePost: function (event) {
+    // currently only deletes from DOM
     event.target.closest('.post').remove();
   },
 
 }
-deleteSelectedPost.init();
+deletePost.init();

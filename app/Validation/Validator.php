@@ -2,7 +2,7 @@
 
 namespace App\Validation;
 
-use Respect\Validation\Validator as Respect;
+use Respect\Validation\Validator as v;
 use Respect\Validation\Exceptions\NestedValidationException;
 
 class Validator
@@ -33,7 +33,7 @@ class Validator
   {
     return empty($this->errors);
   }
-    
+
   public function getErrors()
   {
     return $this->errors;

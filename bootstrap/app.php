@@ -1,9 +1,11 @@
 <?php
 
+// vendor
 use Slim\Views\Twig as View;
 use Slim\Views\TwigExtension as TwigExtension;
 use Respect\Validation\Validator as v;
 
+// local app
 use \App\Auth\Auth as Auth;
 use \App\Validation\Validator as Validator;
 
@@ -21,14 +23,16 @@ $app = new \Slim\App([
   ]
 ]);
 
+// Container used to inject all dependencies to the app
 $container = $app->getContainer();
-
-$container['db'] = function ($container) use ($capsule) {
-  return $capsule;
-};
 
 $container['auth'] = function ($container) {
   return new Auth;
+};
+
+$container['db'] = function ($container) use ($capsule) {
+  // capsule used by Illuminate -- declared in /../config/database.php
+  return $capsule;
 };
 
 $container['validator'] = function ($container) {
@@ -42,7 +46,7 @@ $container['view'] = function ($container) {
     $container->router,
     $container->request->getUri()
   ));
-
+  // auth used as global variable in order to check for user session
   $view->getEnvironment()->addGlobal('auth', [
     'check' => $container->auth->check(),
     'flutter' => $container->auth->flutter(),
@@ -52,6 +56,7 @@ $container['view'] = function ($container) {
   return $view;
 };
 
+// Controller declarations
 $container['AuthController'] = function ($container) {
   return new AuthController($container);
 };
@@ -60,6 +65,7 @@ $container['FlutterController'] = function ($container) {
   return new FlutterController($container);
 };
 
+// Respect validation namespaceing
 v::with('App\\Validation\\');
 
 require_once __DIR__ . '/../app/routes.php';

@@ -1,7 +1,8 @@
 /*
-  Form validation data
+  Form data
 */
-var formValidation = module.exports = {
+
+var formData = module.exports = {
   data: [
     {
       placeholder: 'email',
