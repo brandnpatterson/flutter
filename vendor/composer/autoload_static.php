@@ -144,8 +144,6 @@ class ComposerStaticInitf6e73a38506d323dacbcc9d74cf666f2
         'App\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Controllers/AuthController.php',
         'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Controllers/Controller.php',
         'App\\Controllers\\FlutterController' => __DIR__ . '/../..' . '/app/Controllers/FlutterController.php',
-        'App\\Middleware\\Middleware' => __DIR__ . '/../..' . '/app/Middleware/Middleware.php',
-        'App\\Middleware\\ValidationErrorsMiddleware' => __DIR__ . '/../..' . '/app/Middleware/ValidationErrorsMiddleware.php',
         'App\\Models\\Flutter' => __DIR__ . '/../..' . '/app/Models/Flutter.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Validation\\EmailAvailable' => __DIR__ . '/../..' . '/app/Validation/EmailAvailable.php',

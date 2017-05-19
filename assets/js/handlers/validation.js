@@ -2,6 +2,7 @@
   Handlers used in multiple objects
 */
 
+// formData used to match user input for validation
 import formData from '../form-data';
 
 var validation = module.exports = {

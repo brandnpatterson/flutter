@@ -10,8 +10,6 @@ return array(
     'App\\Controllers\\AuthController' => $baseDir . '/app/Controllers/AuthController.php',
     'App\\Controllers\\Controller' => $baseDir . '/app/Controllers/Controller.php',
     'App\\Controllers\\FlutterController' => $baseDir . '/app/Controllers/FlutterController.php',
-    'App\\Middleware\\Middleware' => $baseDir . '/app/Middleware/Middleware.php',
-    'App\\Middleware\\ValidationErrorsMiddleware' => $baseDir . '/app/Middleware/ValidationErrorsMiddleware.php',
     'App\\Models\\Flutter' => $baseDir . '/app/Models/Flutter.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Validation\\EmailAvailable' => $baseDir . '/app/Validation/EmailAvailable.php',

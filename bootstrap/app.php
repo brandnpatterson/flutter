@@ -6,7 +6,6 @@ use Slim\Views\TwigExtension as TwigExtension;
 use Respect\Validation\Validator as v;
 
 // local app
-
 use \App\Auth\Auth as Auth;
 use \App\Validation\Validator as Validator;
 
@@ -24,7 +23,7 @@ $app = new \Slim\App([
   ]
 ]);
 
-// Container used to inject all dependencies to the app
+// $container used to inject all dependencies to the app
 $container = $app->getContainer();
 
 $container['auth'] = function ($container) {
@@ -32,7 +31,7 @@ $container['auth'] = function ($container) {
 };
 
 $container['db'] = function ($container) use ($capsule) {
-  // capsule used by Illuminate -- declared in /../config/database.php
+  // $capsule used by Illuminate -- declared in /../config/database.php
   return $capsule;
 };
 
@@ -47,7 +46,7 @@ $container['view'] = function ($container) {
     $container->router,
     $container->request->getUri()
   ));
-  // auth used as global variable in order to check for user session
+  // auth and these methods used as global vars to check for user session in Twig
   $view->getEnvironment()->addGlobal('auth', [
     'check' => $container->auth->check(),
     'flutter' => $container->auth->flutter(),

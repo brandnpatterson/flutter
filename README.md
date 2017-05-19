@@ -24,7 +24,7 @@ To install:
 Simply fork this repo and use
 
 ```
-npm install or yarn install
+npm install or yarn install && composer update
 ```
 
 And run

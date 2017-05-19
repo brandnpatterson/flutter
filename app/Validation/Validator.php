@@ -9,6 +9,7 @@ class Validator
 {
   protected $errors;
 
+  // use Respect to check for errors and display the errors in an array in AuthController
   public function validate($request, array $rules)
   {
     foreach ($rules as $field => $rule) {
@@ -19,6 +20,7 @@ class Validator
       }
     }
 
+    // global variable used in Twig
     $_SESSION['errors'] = $this->errors;
 
     return $this;

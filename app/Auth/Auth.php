@@ -7,7 +7,17 @@ use App\Models\Flutter;
 
 class Auth
 {
+  /* The following three methods are used globally in twig templates: */
 
+  // to check if user is signed in
+  public function check()
+  {
+    $userIsSet = isset($_SESSION['user']);
+    $flutterIsSet = isset($_SESSION['flutter']);
+    return [$userIsSet, $flutterIsSet];
+  }
+
+  // to to display user.email upon sign in
   public function user()
   {
     if (isset($_SESSION['user'])) {
@@ -15,18 +25,12 @@ class Auth
     }
   }
 
+  // to display flutter.text_area in flutter posts
   public function flutter()
   {
     if (isset($_SESSION['flutter'])) {
       return Flutter::all()->where('user_id', $_SESSION['user']);
     }
-  }
-
-  public function check()
-  {
-    $userIsSet = isset($_SESSION['user']);
-    $flutterIsSet = isset($_SESSION['flutter']);
-    return [$userIsSet, $flutterIsSet];
   }
 
   public function attemptSignIn($email, $password)

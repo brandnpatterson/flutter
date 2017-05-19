@@ -2,6 +2,8 @@
   Flutter Toggle Modal
 */
 
+import test from './handlers/test-for-element.js';
+
 var toggleModal = {
   init: function () {
     this.cacheDOM();
@@ -11,16 +13,15 @@ var toggleModal = {
     this.modal     = document.querySelector('.modal');
     this.showModal = document.querySelector('.show-modal');
     this.closeBtn  = document.querySelector('.close-btn');
+    this.fadeIn    = document.querySelector('.fade-in');
   },
   bindEvents: function () {
-    this.ifElAddEvent = function (el, event, method) {
-      if (el) {
-        el.addEventListener(event, method);
-      }
-    }
-    var ifElAddEvent = this.ifElAddEvent;
-    ifElAddEvent(this.showModal, 'click', this.handleToggleModal.bind(this));
-    ifElAddEvent(this.closeBtn, 'click', this.handleToggleModal.bind(this));
+    // test.forElement found in handlers folder
+    test.forElement(this.showModal, 'click', this.handleToggleModal.bind(this));
+    test.forElement(this.closeBtn, 'click', this.handleToggleModal.bind(this));
+  },
+  consoleLog: function () {
+    console.log('hi');
   },
   handleToggleModal: function () {
     if (this.modal.classList.contains('hidden')) {
