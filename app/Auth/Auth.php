@@ -18,8 +18,7 @@ class Auth
   public function flutter()
   {
     if (isset($_SESSION['flutter'])) {
-      $signedInFlutter = Flutter::all()->where('user_id', $_SESSION['user']);
-      return $signedInFlutter;
+      return Flutter::all()->where('user_id', $_SESSION['user']);
     }
   }
 

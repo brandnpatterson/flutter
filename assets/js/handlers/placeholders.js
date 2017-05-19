@@ -2,7 +2,7 @@
   Set initial placeholders for inputs
 */
 
-import formData from './form-data';
+import formData from '../form-data';
 
 var placeholders = module.exports = {
   init: function (requiredInputs) {
@@ -12,7 +12,7 @@ var placeholders = module.exports = {
       }
     }, this);
   },
-  toggle: function (requiredInputs, event) {
+  toggle: function (requiredInputs) {
     requiredInputs.map(function (input, index) {
       var validationMessage = input.nextSibling;
       if (event.target != input) {

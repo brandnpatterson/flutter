@@ -6,6 +6,7 @@ use Slim\Views\TwigExtension as TwigExtension;
 use Respect\Validation\Validator as v;
 
 // local app
+
 use \App\Auth\Auth as Auth;
 use \App\Validation\Validator as Validator;
 

@@ -2,7 +2,7 @@
   Webpack entry point
 */
 
-import './toggle-modal';
+import './delete-post';
 import './sign-in.js';
 import './sign-up.js';
-import './delete-post';
+import './toggle-modal';

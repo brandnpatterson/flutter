@@ -1,17 +1,16 @@
 /*
-  Flutter Sign Up
+  Flutter Sign in
 */
 
-import formData from './form-data';
-import test from './test-for-element';
-import placeholders from './placeholders';
-import validation from './validation';
+import test from './handlers/test-for-element';
+import placeholders from './handlers/placeholders';
+import validation from './handlers/validation';
 
-var signUp = {
+var auth = {
   init: function () {
     this.cacheDOM();
     this.bindEvents();
-    placeholders.init(this.requiredInputs);
+    placeholders.init(this.requiredSignUp);
   },
   cacheDOM: function () {
     this.closeBtn   = document.querySelector('.close-btn');
@@ -19,31 +18,21 @@ var signUp = {
     this.failEmail  = document.querySelector('.input-fail-email');
     var emailSignUp = document.querySelector('.email-sign-up');
     var passSignUp  = document.querySelector('.password-sign-up');
-    this.requiredInputs = [
+    this.requiredSignUp = [
       emailSignUp,
       passSignUp
     ];
   },
-  initPlaceholders: function () {
-    this.requiredInputs.map(function (input, index) {
-      if (input) {
-        input.placeholder = formData.data[index].placeholder;
-      }
-    }, this);
-  },
   bindEvents: function () {
-    test.forElement(this.formSignUp , 'click', validation.liveValidation.bind(this));
-    test.forElement(this.formSignUp, 'click', this.onInputSelect.bind(this));
+    // test.forElement found in handlers folder
+    test.forElement(this.formSignUp , 'click', this.liveValidation.bind(this));
+    test.forElement(this.formSignUp, 'click', this.placeholdersToggle.bind(this));
   },
-  onInputSelect: function (event) {
-    this.requiredInputs.map(function (input, index) {
-      var validationMessage = input.nextSibling;
-      if (event.target != input) {
-        input.placeholder = formData.data[index].placeholder;
-      } else {
-        input.placeholder = '';
-      }
-    }, this);
+  liveValidation: function () {
+    validation.liveValidation(this.requiredSignUp);
+  },
+  placeholdersToggle: function () {
+    placeholders.toggle(this.requiredSignUp);
   }
 }
-signUp.init();
+auth.init();

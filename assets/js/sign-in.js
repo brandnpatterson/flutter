@@ -2,40 +2,37 @@
   Flutter Sign in
 */
 
-import formData from './form-data';
-import test from './test-for-element';
-import placeholders from './placeholders';
-import validation from './validation';
+import test from './handlers/test-for-element';
+import placeholders from './handlers/placeholders';
+import validation from './handlers/validation';
 
-var signIn = {
+var auth = {
   init: function () {
     this.cacheDOM();
     this.bindEvents();
-    placeholders.init(this.requiredInputs);
+    placeholders.init(this.requiredSignIn);
   },
   cacheDOM: function () {
     this.closeBtn   = document.querySelector('.close-btn');
     this.formSignIn = document.querySelector('.form-sign-in');
+    this.failEmail  = document.querySelector('.input-fail-email');
     var emailSignIn = document.querySelector('.email-sign-in');
     var passSignIn  = document.querySelector('.password-sign-in');
-    this.requiredInputs = [
+    this.requiredSignIn = [
       emailSignIn,
       passSignIn
     ];
   },
   bindEvents: function () {
-    test.forElement(this.formSignIn , 'click', validation.liveValidation.bind(this));
-    test.forElement(this.formSignIn, 'click', this.onInputSelect.bind(this));
+    // test.forElement found in handlers folder
+    test.forElement(this.formSignIn , 'click', this.liveValidation.bind(this));
+    test.forElement(this.formSignIn, 'click', this.placeholdersToggle.bind(this));
   },
-  onInputSelect: function (event) {
-    this.requiredInputs.map(function (input, index) {
-      var validationMessage = input.nextSibling;
-      if (event.target != input) {
-        input.placeholder = formData.data[index].placeholder;
-      } else {
-        input.placeholder = '';
-      }
-    }, this);
+  liveValidation: function () {
+    validation.liveValidation(this.requiredSignIn);
+  },
+  placeholdersToggle: function () {
+    placeholders.toggle(this.requiredSignIn);
   }
 }
-signIn.init();
+auth.init();

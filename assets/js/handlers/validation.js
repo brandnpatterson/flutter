@@ -2,11 +2,11 @@
   Handlers used in multiple objects
 */
 
-import formData from './form-data';
+import formData from '../form-data';
 
 var validation = module.exports = {
-  liveValidation: function (event, requiredInputs) {
-    this.requiredInputs.map(function (input, index) {
+  liveValidation: function (requiredInputs) {
+    requiredInputs.map(function (input, index) {
       var validationMessage = input.nextSibling;
       if (input.value === '') {
         event.preventDefault();

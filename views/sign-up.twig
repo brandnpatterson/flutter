@@ -13,7 +13,7 @@
   <form action="{{ path_for('sign-up') }}" method="post" class="form form-sign-up">
     <i class="material-icons">sentiment_very_satisfied</i>
     <div>
-      <input class="email-sign-up {{ errors.email ? 'has-errors' : '' }}" name="email" type="text" value="{{ old.email }}" autocomplete="on" /><p></p>
+      <input class="email-sign-up {{ errors.email ? 'has-errors' : '' }}" name="email" type="text" autocomplete="on" /><p></p>
     </div>
     <div>
       {% if errors.email %}
@@ -25,11 +25,6 @@
     </div>
     <div>
       <input class="password-sign-up" name="password" type="password" /><p></p>
-      {% if errors.password %}
-        <p class="input-fail-password">
-          {{ errors.password | first }}
-        </p>
-      {% endif %}
     </div>
     <input type="submit" value="Sign Up">
     <a class="show-modal" href="#0">Or Sign in</a>
