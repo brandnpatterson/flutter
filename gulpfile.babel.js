@@ -17,9 +17,11 @@ gulp.task('browser-sync', () => {
   });
 });
 
+gulp.task('build', ['scripts', 'styles']);
+
 gulp.task('clean', del.bind(null, ['public/css/*', 'public/js/*'], {read: false}));
 
-gulp.task('default', ['mamp','browser-sync', 'scripts', 'styles', 'watch']);
+gulp.task('default', ['mamp','browser-sync', 'build', 'watch']);
 
 gulp.task('mamp', ['start']);
 

@@ -5,9 +5,10 @@
   "author": "Brandon Patterson",
   "main": "public/index.php",
   "scripts": {
-    "dev": "gulp clean && gulp",
+    "deploy": "git push heroku master",
     "dump": "composer dump-autoload -o",
-    "start": "gulp"
+    "prod": "gulp clean && gulp build && webpack -p",
+    "start": "gulp clean && gulp build && gulp"
   },
   "license": "MIT",
   "devDependencies": {
