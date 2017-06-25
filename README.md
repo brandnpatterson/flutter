@@ -1,5 +1,5 @@
 
-# flutter (currently in development)
+# flutter
 
 flutter is a lightweight single page application template built to emulate social media. The technologies used to create it are PHP, MySQL, and JavaScript. Other technologies used in development are listed in package.json & composr.json. Feel free to use this template for any app that you create.
 
