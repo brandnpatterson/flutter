@@ -1,0 +1,65 @@
+form {
+  margin: 0 auto;
+  max-width: 200px;
+  padding: 0;
+
+  h2 {
+    text-align: center;
+  }
+
+  .formgroup {
+    position: relative;
+    margin: 10px auto 0;
+
+    label {
+      font-size: 14px;
+    }
+
+    input[type='text'],
+    input[type='tel'],
+    input[type='submit'] {
+      padding: 0;
+      width: 100%;
+    }
+
+    input[type='submit'] {
+      background: green;
+      border: none;
+      color: white;
+      cursor: pointer;
+      appearance: none;
+      padding: 0;
+      margin: 0;
+      height: 30px;
+      width: 210px;
+      font-size: 16px;
+    }
+
+    .input-success {
+      color: green;
+      position: absolute;
+      top: 20px;
+      right: -13px;
+      @include min($iPad) {
+        top: 20px;
+        right: -20px;
+      }
+    }
+
+    .input-fail {
+      color: red;
+      font-size: 13px;
+    }
+  }
+
+  .selection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p,
+    label {
+      font-size: 13px;
+      margin: 0 3px;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Form Submission</title>
+  </head>
+  <body>
+    <form class="form" action="index.html" method="POST" autocomplete="off">
+      <div class="formgroup">
+        <h2>Form Submission</h2>
+      </div>
+      <div class="formgroup">
+        <label for="name"> Name: *
+          <input type="text" id="name" name="name" autofocus><i class="material-icons"></i>
+        </label>
+      </div>
+      <div class="formgroup">
+        <label for="email"> Email: *
+          <input type="text" id="email" name="email"><i class="material-icons"></i>
+        </label>
+      </div>
+      <div class="formgroup">
+        <label for="phone"> Phone: *
+          <input type="tel" id="phone" name="phone"><i class="material-icons"></i>
+        </label>
+      </div>
+      <div class="formgroup">
+        <label for="address"> Address: *
+          <input type="text" id="address" name="address"><i class="material-icons"></i>
+        </label>
+      </div>
+      <div>
+        <div class="selection formgroup">
+          <p>Love cats? *</p>
+          <label for="yes-cat"> Yes
+            <input type="radio" id="yes-cat" name="cat" required>
+          </label>
+          <label for="no-cat"> No
+            <input type="radio" id="no-cat" name="cat" required>
+          </label>
+        </div>
+        <div class="selection formgroup">
+          <p>Love dogs? *</p>
+          <label for="yes-dog"> Yes
+            <input type="radio" id="yes-dog" name="dog" required>
+          </label>
+          <label for="no-dog"> No
+            <input type="radio" id="no-dog" name="dog" required>
+          </label>
+        </div>
+      </div>
+      <div class="formgroup">
+        <input type="submit" name="submit" value="Submit">
+      </div>
+    </form>
+  </body>
+  <script src="public/js/bundle.js"></script>
+</html>
